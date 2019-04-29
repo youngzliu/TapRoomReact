@@ -25,6 +25,13 @@ _This website will allow users to manage a Tap room.._
 
 ## Prompt Questions
 
+- _Unforeseen issues/questions_
+  - _How to set an imported image as a global background image? The Jsx module styling doesn't allow for nested code (needed when referencing the import) and CSS objects don't seem to be able to apply the background image globally (only to the area the component renders). I had to force a min height on the image, which feels hacky._
+
+* _Differences between Angular and React_
+  - _Much easier to manage files in React without having 4 files to manage for each component._
+    - _Although there isn't really much backend at the moment, purely front end stuff. So maybe it will become more complex later._
+
 ## Support and contact details
 
 _For support find me at Epicodus._
