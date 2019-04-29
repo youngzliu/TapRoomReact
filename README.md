@@ -6,7 +6,7 @@
 
 ## Description
 
-_This website will allow users to manage a Tap room.._
+_This website will allow users to manage a Tap room._
 
 - _SPECS:_
   - _Users should be able to see a list of all available kegs._
@@ -14,6 +14,8 @@ _This website will allow users to manage a Tap room.._
   - _Users should be able to edit the properties of the keg by clicking on it._
   - _Users should be able to add a new keg with the specified details._
   - _Users should encounter an error message when visiting an invalid path._
+
+![Component Diagram](./TapRoomDiagram.png)
 
 ## Setup/Installation Requirements
 
