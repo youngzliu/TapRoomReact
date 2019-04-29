@@ -66,25 +66,23 @@ export default function Form() {
         `}
       </style>
       <form className="bookingForm">
-        <h1>Book unique homes and experiences.</h1>
-        <label>WHERE</label>
+        <h1>Add a New Keg:</h1>
+        <label>Name</label>
         <br />
-        <input className="where" type="text" placeholder="Anywhere" />
-        <div className="test">
-          <div>
-            <label>CHECK-IN</label>
-            <br />
-            <input type="date" />
-          </div>
-          <div>
-            <label>CHECK-OUT</label>
-            <br />
-            <input type="date" />
-          </div>
+        <input className="where" type="text" placeholder="Name" />
+        <label>Brand</label>
+        <br />
+        <input className="where" type="text" placeholder="Brand" />
+        <label>Price</label>
+        <br />
+        <input className="where" type="text" placeholder="Price" />
+        <label>Alcohol Content</label>
+        <br />
+        <input className="where" type="text" placeholder="Alcohol Content" />
+
+        <div className="btnContainer">
+          <button className="submitBtn">Add</button>
         </div>
-        <label>GUESTS</label>
-        <br />
-        <input className="where" type="text" placeholder="Guests" />
       </form>
     </div>
   );

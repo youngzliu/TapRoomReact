@@ -23,6 +23,8 @@ export default function RightSide() {
           .first p {
             font-size: 15px;
             color: white;
+            font-size: 2rem;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
             padding-bottom: 30px;
             border-bottom: 2px solid transparent;
           }

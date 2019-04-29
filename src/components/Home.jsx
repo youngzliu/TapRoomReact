@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Form from "./Form";
-import beerBubbles from "./assets/images/beerBubbles.jpg";
+import KegList from "./KegList";
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
         `}
       </style>
       <Navbar />
-      <Form />
+      <KegList />
     </div>
   );
 }
