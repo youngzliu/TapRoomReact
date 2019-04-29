@@ -1,5 +1,4 @@
 import React from "react";
-import RightSideYoung from "./RightSideYoung";
 import LeftSide from "./LeftSide";
 import Explore from "./Explore";
 

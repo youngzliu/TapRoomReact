@@ -22,11 +22,7 @@ export default function Footer() {
           }
         `}
       </style>
-      <p className="footer">
-        Over 300
-        <br />
-        unique homes in Oregon
-      </p>
+      <p className="footer">Freshly brewed, always.</p>
     </div>
   );
 }

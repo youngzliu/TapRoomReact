@@ -1,6 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function RightSide() {
+  let linkStyle = {
+    textDecoration: "none"
+  };
+
   return (
     <div>
       <style jsx>
@@ -23,7 +28,7 @@ export default function RightSide() {
           }
 
           .first p:hover {
-            border-bottom: 2px solid white; /* Or whatever color you want */
+            border-bottom: 2px solid white;
             padding-bottom: 30px;
             cursor: pointer;
           }
@@ -32,16 +37,14 @@ export default function RightSide() {
 
       <div className="container">
         <div className="first">
-          <p>Become a host</p>
+          <Link to="/" style={linkStyle}>
+            <p>View Kegs</p>
+          </Link>
         </div>
         <div className="first">
-          <p>Help</p>
-        </div>
-        <div className="first">
-          <p>Sign up</p>
-        </div>
-        <div className="first">
-          <p>Log in</p>
+          <Link to="/new" style={linkStyle}>
+            <p>Add Kegs</p>
+          </Link>
         </div>
       </div>
     </div>
