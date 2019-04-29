@@ -1,7 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./Home";
-import SearchResults from "./SearchResults";
 import Error404 from "./Error404";
 import NewKeg from "./NewKeg";
 import beerBubbles from "./assets/images/beerBubbles.jpg";
