@@ -85,12 +85,6 @@ export default function Form() {
         <label>GUESTS</label>
         <br />
         <input className="where" type="text" placeholder="Guests" />
-
-        <div className="btnContainer">
-          <Link to="/search">
-            <button className="submitBtn">Search</button>
-          </Link>
-        </div>
       </form>
     </div>
   );

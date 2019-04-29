@@ -4,10 +4,16 @@ import Home from "./Home";
 import SearchResults from "./SearchResults";
 import Error404 from "./Error404";
 import NewKeg from "./NewKeg";
+import beerBubbles from "./assets/images/beerBubbles.jpg";
 
 function App() {
   return (
-    <div>
+    <div
+      style={{
+        backgroundImage: "url(" + beerBubbles + ")",
+        minHeight: "5000px"
+      }}
+    >
       <style jsx global>
         {`
           body {

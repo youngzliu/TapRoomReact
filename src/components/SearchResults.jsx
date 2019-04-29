@@ -5,13 +5,6 @@ import Explore from "./Explore";
 export default function SearchResults() {
   return (
     <div>
-      <style jsx global>
-        {`
-          body {
-            background: white;
-          }
-        `}
-      </style>
       <style jsx>
         {`
           .testing {

@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Form from "./Form";
+import beerBubbles from "./assets/images/beerBubbles.jpg";
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
       <style jsx global>
         {`
           body {
-            background: #28547a;
+            background: #654321;
           }
         `}
       </style>
