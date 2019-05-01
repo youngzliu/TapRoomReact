@@ -14,7 +14,8 @@ export default function Keg(props) {
       <ul>
         <li>{props.brand}</li>
         <li>{props.price}</li>
-        <li>{props.content}</li>
+        <li>{props.conc}</li>
+        <li>{props.amount}</li>
       </ul>
     </div>
   );
@@ -24,5 +25,7 @@ Keg.propTypes = {
   name: PropTypes.string,
   brand: PropTypes.string,
   price: PropTypes.string,
-  content: PropTypes.string
+  conc: PropTypes.string,
+  amount: PropTypes.number,
+  kegId: PropTypes.string
 };

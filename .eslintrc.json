@@ -14,7 +14,7 @@
   "plugins": ["react"],
   "rules": {
     "indent": ["error", 2],
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": ["error", "unix"],
     "semi": ["error", "always"],
     "react/jsx-key": 2,
     "react/jsx-uses-vars": 2,
