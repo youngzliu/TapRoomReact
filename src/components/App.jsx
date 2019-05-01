@@ -10,7 +10,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterKegList: new Map()
+      masterKegList: new Map(),
+      kegToEdit: null
     };
     this.handleAddingNewKeg = this.handleAddingNewKeg.bind(this);
     this.handleRemovingPint = this.handleRemovingPint.bind(this);
@@ -30,6 +31,10 @@ class App extends React.Component {
       kegToChange.amount = kegToChange.amount - 1;
     }
     this.setState({ masterKegList: newMasterKegList });
+  }
+
+  handleToEdit(kegId) {
+    this.setState({ kegToEdit: });
   }
 
   render() {

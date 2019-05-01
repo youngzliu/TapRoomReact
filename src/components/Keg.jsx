@@ -16,10 +16,17 @@ export default function Keg(props) {
             height: 48px;
             width: 100px;
             border-radius: 5px;
-            background: #ff5a5f;
             color: white;
             font-size: 15px;
             font-weight: bold;
+          }
+          .sell {
+            background: red;
+          }
+
+          .edit {
+            background: green;
+            margin-left: 10px;
           }
         `}
       </style>
@@ -31,11 +38,20 @@ export default function Keg(props) {
         <li>Pints left: {props.amount}</li>
 
         <button
+          className="sell"
           onClick={() => {
             props.onRemovingPint(props.kegId);
           }}
         >
           Sell Pint
+        </button>
+        <button
+          className="edit"
+          onClick={() => {
+            props.onRemovingPint(props.kegId);
+          }}
+        >
+          Edit Keg
         </button>
       </ul>
     </div>
