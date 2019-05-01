@@ -15,6 +15,7 @@ export default function KegList(props) {
             amount={value.amount}
             key={key}
             kegId={key}
+            onRemovingPint={props.onRemovingPint}
           />
         ))}
       </ul>
@@ -23,5 +24,6 @@ export default function KegList(props) {
 }
 
 KegList.propTypes = {
-  kegList: PropTypes.object
+  kegList: PropTypes.object,
+  onRemovingPint: PropTypes.func
 };

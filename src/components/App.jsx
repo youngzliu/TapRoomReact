@@ -13,12 +13,22 @@ class App extends React.Component {
       masterKegList: new Map()
     };
     this.handleAddingNewKeg = this.handleAddingNewKeg.bind(this);
+    this.handleRemovingPint = this.handleRemovingPint.bind(this);
   }
 
   handleAddingNewKeg(newKeg) {
     var newKegId = v4();
     let newMasterKegList = new Map(this.state.masterKegList);
     newMasterKegList.set(newKegId, newKeg);
+    this.setState({ masterKegList: newMasterKegList });
+  }
+
+  handleRemovingPint(kegId) {
+    let newMasterKegList = new Map(this.state.masterKegList);
+    let kegToChange = newMasterKegList.get(kegId);
+    if (kegToChange.amount > 0) {
+      kegToChange.amount = kegToChange.amount - 1;
+    }
     this.setState({ masterKegList: newMasterKegList });
   }
 
@@ -40,7 +50,12 @@ class App extends React.Component {
           <Route
             exact
             path="/"
-            render={() => <KegList kegList={this.state.masterKegList} />}
+            render={() => (
+              <KegList
+                kegList={this.state.masterKegList}
+                onRemovingPint={this.handleRemovingPint}
+              />
+            )}
           />
           <Route
             exact

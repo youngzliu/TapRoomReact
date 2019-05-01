@@ -16,11 +16,6 @@ export default function Footer() {
             margin-bottom: 50px;
             text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
           }
-
-          .footer:hover {
-            text-decoration: underline;
-            cursor: pointer;
-          }
         `}
       </style>
       <p className="footer">Freshly brewed, always.</p>

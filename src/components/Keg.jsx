@@ -10,12 +10,33 @@ export default function Keg(props) {
   };
   return (
     <div style={kegStyles}>
+      <style jsx>
+        {`
+          button {
+            height: 48px;
+            width: 100px;
+            border-radius: 5px;
+            background: #ff5a5f;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+          }
+        `}
+      </style>
       <li>{props.name}</li>
       <ul>
-        <li>{props.brand}</li>
-        <li>{props.price}</li>
-        <li>{props.conc}</li>
-        <li>{props.amount}</li>
+        <li>Brand: {props.brand}</li>
+        <li>Price: {props.price}</li>
+        <li>Alcohol Content: {props.conc}</li>
+        <li>Pints left: {props.amount}</li>
+
+        <button
+          onClick={() => {
+            props.onRemovingPint(props.kegId);
+          }}
+        >
+          Sell Pint
+        </button>
       </ul>
     </div>
   );
@@ -27,5 +48,6 @@ Keg.propTypes = {
   price: PropTypes.string,
   conc: PropTypes.string,
   amount: PropTypes.number,
-  kegId: PropTypes.string
+  kegId: PropTypes.string,
+  onRemovingPint: PropTypes.func
 };
