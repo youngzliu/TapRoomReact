@@ -48,7 +48,7 @@ export default function Keg(props) {
         <button
           className="edit"
           onClick={() => {
-            props.onRemovingPint(props.kegId);
+            props.onSelectToEdit(props.kegId);
           }}
         >
           Edit Keg
@@ -65,5 +65,6 @@ Keg.propTypes = {
   conc: PropTypes.string,
   amount: PropTypes.number,
   kegId: PropTypes.string,
-  onRemovingPint: PropTypes.func
+  onRemovingPint: PropTypes.func,
+  onSelectToEdit: PropTypes.func
 };

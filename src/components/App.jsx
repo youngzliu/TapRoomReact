@@ -15,6 +15,8 @@ class App extends React.Component {
     };
     this.handleAddingNewKeg = this.handleAddingNewKeg.bind(this);
     this.handleRemovingPint = this.handleRemovingPint.bind(this);
+    this.handleSelectToEdit = this.handleSelectToEdit.bind(this);
+    this.handleEditKeg = this.handleEditKeg.bind(this);
   }
 
   handleAddingNewKeg(newKeg) {
@@ -33,8 +35,15 @@ class App extends React.Component {
     this.setState({ masterKegList: newMasterKegList });
   }
 
-  handleToEdit(kegId) {
-    this.setState({ kegToEdit: });
+  handleSelectToEdit(kegId) {
+    this.setState({ kegToEdit: kegId });
+  }
+
+  handleEditKeg(keg) {
+    let newMasterKegList = new Map(this.state.masterKegList);
+    keg.amount = newMasterKegList.get(this.state.kegToEdit).amount;
+    newMasterKegList.set(this.state.kegToEdit, keg);
+    this.setState({ masterKegList: newMasterKegList });
   }
 
   render() {
@@ -45,7 +54,7 @@ class App extends React.Component {
             body {
               font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
                 "Helvetica Neue", sans-serif;
-              background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/SBlo8amripm9dyff/videoblocks-a-pint-of-dark-beer-is-rotating-against-black-background-glass-of-stout-is-spinning_bwezegvif_thumbnail-full01.png);
+              background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/SBlo8amripm9dyff/videoblocks-a-pint-of-dark-beer-is-rotating-against-black-background-glass-of-stout-is-spinning_sz-b4e4im_thumbnail-full01.png);
               background-size: cover;
             }
           `}
@@ -59,6 +68,9 @@ class App extends React.Component {
               <KegList
                 kegList={this.state.masterKegList}
                 onRemovingPint={this.handleRemovingPint}
+                onSelectToEdit={this.handleSelectToEdit}
+                onEditKeg={this.handleEditKeg}
+                kegToEdit={this.state.kegToEdit}
               />
             )}
           />
