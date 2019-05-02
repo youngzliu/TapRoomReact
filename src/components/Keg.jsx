@@ -8,43 +8,40 @@ export default function Keg(props) {
     fontSize: "2rem",
     textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
   };
-  return (
-    <div style={kegStyles}>
-      <style jsx>
-        {`
-          button {
-            height: 48px;
-            width: 100px;
-            border-radius: 5px;
-            color: white;
-            font-size: 15px;
-            font-weight: bold;
-          }
-          .sell {
-            background: #ea8e0e;
-            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-          }
 
-          .edit {
-            background: green;
-            margin-left: 10px;
-            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-          }
+  let buttons = null;
 
-          .delete {
-            background: red;
-            margin-left: 10px;
-            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-          }
-        `}
-      </style>
-      <li>{props.name}</li>
-      <ul>
-        <li>Brand: {props.brand}</li>
-        <li>Price: {props.price}</li>
-        <li>Alcohol Content: {props.conc}</li>
-        <li>Pints left: {props.amount}</li>
+  if (props.currentRouterPath === "/admin") {
+    buttons = (
+      <div>
+        <style jsx>
+          {`
+            button {
+              height: 48px;
+              width: 100px;
+              border-radius: 5px;
+              color: white;
+              font-size: 15px;
+              font-weight: bold;
+            }
+            .sell {
+              background: #ea8e0e;
+              text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            }
 
+            .edit {
+              background: green;
+              margin-left: 10px;
+              text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            }
+
+            .delete {
+              background: red;
+              margin-left: 10px;
+              text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            }
+          `}
+        </style>
         <button
           className="sell"
           onClick={() => {
@@ -69,6 +66,20 @@ export default function Keg(props) {
         >
           Delete Keg
         </button>
+      </div>
+    );
+  }
+
+  return (
+    <div style={kegStyles}>
+      <li>{props.name}</li>
+      <ul>
+        <li>Brand: {props.brand}</li>
+        <li>Price: {props.price}</li>
+        <li>Alcohol Content: {props.conc}</li>
+        <li>Pints left: {props.amount}</li>
+
+        {buttons}
       </ul>
     </div>
   );
@@ -83,5 +94,6 @@ Keg.propTypes = {
   kegId: PropTypes.string,
   onRemovingPint: PropTypes.func,
   onSelectToEdit: PropTypes.func,
-  onDeletingKeg: PropTypes.func
+  onDeletingKeg: PropTypes.func,
+  currentRouterPath: PropTypes.string
 };

@@ -2,8 +2,35 @@ import React from "react";
 import Keg from "./Keg";
 import EditKeg from "./EditKeg";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export default function KegList(props) {
+  let addButton = null;
+  if (props.currentRouterPath === "/admin") {
+    addButton = (
+      <div>
+        <style jsx>
+          {`
+            button {
+              height: 100px;
+              width: 200px;
+              border-radius: 5px;
+              color: white;
+              font-size: 15px;
+              font-weight: bold;
+              background: blue;
+              text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+              margin-left: 40px;
+            }
+          `}
+        </style>
+        <Link to="/new">
+          <button>Add New Keg</button>
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div>
       <ul>
@@ -35,11 +62,13 @@ export default function KegList(props) {
                 onRemovingPint={props.onRemovingPint}
                 onSelectToEdit={props.onSelectToEdit}
                 onDeletingKeg={props.onDeletingKeg}
+                currentRouterPath={props.currentRouterPath}
               />
             );
           }
         })}
       </ul>
+      {addButton}
     </div>
   );
 }
@@ -50,5 +79,6 @@ KegList.propTypes = {
   onSelectToEdit: PropTypes.func,
   onEditKeg: PropTypes.func,
   kegToEdit: PropTypes.string,
-  onDeletingKeg: PropTypes.func
+  onDeletingKeg: PropTypes.func,
+  currentRouterPath: PropTypes.string
 };

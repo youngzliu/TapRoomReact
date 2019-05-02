@@ -44,8 +44,8 @@ export default function RightSide() {
           </Link>
         </div>
         <div className="first">
-          <Link to="/new" style={linkStyle}>
-            <p>Add Kegs</p>
+          <Link to="/admin" style={linkStyle}>
+            <p>Admin</p>
           </Link>
         </div>
       </div>

@@ -117,6 +117,21 @@ class App extends React.Component {
           />
           <Route
             exact
+            path="/admin"
+            render={props => (
+              <KegList
+                kegList={this.state.masterKegList}
+                onRemovingPint={this.handleRemovingPint}
+                onSelectToEdit={this.handleSelectToEdit}
+                onEditKeg={this.handleEditKeg}
+                kegToEdit={this.state.kegToEdit}
+                onDeletingKeg={this.handleDeletingKeg}
+                currentRouterPath={props.location.pathname}
+              />
+            )}
+          />
+          <Route
+            exact
             path="/new"
             render={() => <NewKeg onNewKegCreation={this.handleAddingNewKeg} />}
           />
