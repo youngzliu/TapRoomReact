@@ -9,11 +9,15 @@
 _This website will allow users to manage a Tap room._
 
 - _SPECS:_
-  - _Users should be able to see a list of all available kegs._
-  - _Users should be able to click on an individual keg to see its details, including its name, brand, price, and alcohol content._
-  - _Users should be able to edit the properties of the keg by clicking on it._
-  - _Users should be able to add a new keg with the specified details._
+  - _Users can be able to see a list of all available kegs._
+  - _Users can be able to see the keg's details, including its name, brand, price, and alcohol content._
   - _Users should encounter an error message when visiting an invalid path._
+  - _Admins can visit the admin section to perform additional functions on the kegs._
+  - _Admins can edit the properties of the keg by clicking on the edit button._
+  - _Admins can add a new keg with the specified details by clicking on the add keg button._
+  - _Admins can sell a pint of the keg by clicking the sell pint button._
+  - _Admins can't sell a pint anymore when the pints left reaches 0._
+  - _Admins can delete a keg by clicking the delete keg button._
 
 ![Component Diagram](./TapRoomDiagram.png)
 
