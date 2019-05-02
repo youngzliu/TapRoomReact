@@ -21,12 +21,20 @@ export default function Keg(props) {
             font-weight: bold;
           }
           .sell {
-            background: red;
+            background: #ea8e0e;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
           }
 
           .edit {
             background: green;
             margin-left: 10px;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+          }
+
+          .delete {
+            background: red;
+            margin-left: 10px;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
           }
         `}
       </style>
@@ -53,6 +61,14 @@ export default function Keg(props) {
         >
           Edit Keg
         </button>
+        <button
+          className="delete"
+          onClick={() => {
+            props.onDeletingKeg(props.kegId);
+          }}
+        >
+          Delete Keg
+        </button>
       </ul>
     </div>
   );
@@ -66,5 +82,6 @@ Keg.propTypes = {
   amount: PropTypes.number,
   kegId: PropTypes.string,
   onRemovingPint: PropTypes.func,
-  onSelectToEdit: PropTypes.func
+  onSelectToEdit: PropTypes.func,
+  onDeletingKeg: PropTypes.func
 };

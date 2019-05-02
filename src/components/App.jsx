@@ -6,6 +6,30 @@ import Navbar from "./Navbar";
 import KegList from "./KegList";
 import { v4 } from "uuid";
 
+const initialKegs = [
+  {
+    name: "Banana Bread Beer",
+    brand: "Charles Wells",
+    price: "$10.98",
+    conc: "5.2%",
+    amount: 124
+  },
+  {
+    name: "Amber Lager",
+    brand: "Abita",
+    price: "$9.98",
+    conc: "4.5%",
+    amount: 124
+  },
+  {
+    name: "Obsidian Stout Ale",
+    brand: "Deschutes",
+    price: "$11.98",
+    conc: "6.4%",
+    amount: 124
+  }
+];
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -17,6 +41,13 @@ class App extends React.Component {
     this.handleRemovingPint = this.handleRemovingPint.bind(this);
     this.handleSelectToEdit = this.handleSelectToEdit.bind(this);
     this.handleEditKeg = this.handleEditKeg.bind(this);
+    this.handleDeletingKeg = this.handleDeletingKeg.bind(this);
+  }
+
+  componentDidMount() {
+    for (let i = 0; i < initialKegs.length; i++) {
+      this.handleAddingNewKeg(initialKegs[i]);
+    }
   }
 
   handleAddingNewKeg(newKeg) {
@@ -46,6 +77,12 @@ class App extends React.Component {
     this.setState({ masterKegList: newMasterKegList });
   }
 
+  handleDeletingKeg(kegId) {
+    let newMasterKegList = new Map(this.state.masterKegList);
+    newMasterKegList.delete(kegId);
+    this.setState({ masterKegList: newMasterKegList });
+  }
+
   render() {
     return (
       <div>
@@ -71,6 +108,7 @@ class App extends React.Component {
                 onSelectToEdit={this.handleSelectToEdit}
                 onEditKeg={this.handleEditKeg}
                 kegToEdit={this.state.kegToEdit}
+                onDeletingKeg={this.handleDeletingKeg}
               />
             )}
           />

@@ -34,6 +34,7 @@ export default function KegList(props) {
                 kegId={key}
                 onRemovingPint={props.onRemovingPint}
                 onSelectToEdit={props.onSelectToEdit}
+                onDeletingKeg={props.onDeletingKeg}
               />
             );
           }
@@ -48,5 +49,6 @@ KegList.propTypes = {
   onRemovingPint: PropTypes.func,
   onSelectToEdit: PropTypes.func,
   onEditKeg: PropTypes.func,
-  kegToEdit: PropTypes.string
+  kegToEdit: PropTypes.string,
+  onDeletingKeg: PropTypes.func
 };
