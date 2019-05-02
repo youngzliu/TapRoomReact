@@ -96,6 +96,7 @@ class App extends React.Component {
                 "Helvetica Neue", sans-serif;
               background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/SBlo8amripm9dyff/videoblocks-a-pint-of-dark-beer-is-rotating-against-black-background-glass-of-stout-is-spinning_sz-b4e4im_thumbnail-full01.png);
               background-size: cover;
+              background-attachment: fixed;
             }
           `}
         </style>
