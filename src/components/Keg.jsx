@@ -40,6 +40,10 @@ export default function Keg(props) {
               margin-left: 10px;
               text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
             }
+
+            button:hover {
+              cursor: pointer;
+            }
           `}
         </style>
         <button

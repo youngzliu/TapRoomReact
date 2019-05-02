@@ -22,6 +22,10 @@ export default function KegList(props) {
               text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
               margin-left: 40px;
             }
+
+            button:hover {
+              cursor: pointer;
+            }
           `}
         </style>
         <Link to="/new">
