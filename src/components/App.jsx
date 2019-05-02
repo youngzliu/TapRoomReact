@@ -30,11 +30,20 @@ const initialKegs = [
   }
 ];
 
+function addInitialKegs() {
+  let kegList = new Map();
+  for (let i = 0; i < initialKegs.length; i++) {
+    let newKegId = v4();
+    kegList.set(newKegId, initialKegs[i]);
+  }
+  return kegList;
+}
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterKegList: new Map(),
+      masterKegList: addInitialKegs(),
       kegToEdit: null
     };
     this.handleAddingNewKeg = this.handleAddingNewKeg.bind(this);
@@ -42,12 +51,6 @@ class App extends React.Component {
     this.handleSelectToEdit = this.handleSelectToEdit.bind(this);
     this.handleEditKeg = this.handleEditKeg.bind(this);
     this.handleDeletingKeg = this.handleDeletingKeg.bind(this);
-  }
-
-  componentDidMount() {
-    for (let i = 0; i < initialKegs.length; i++) {
-      this.handleAddingNewKeg(initialKegs[i]);
-    }
   }
 
   handleAddingNewKeg(newKeg) {
